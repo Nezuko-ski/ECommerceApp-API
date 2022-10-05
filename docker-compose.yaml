@@ -1,0 +1,15 @@
+version: "3.8"
+
+
+services:
+  EcommerceApp:
+    image: mcr.microsoft.com/dotnet/sdk:6.0
+    ports: 
+      - 80:80
+    environment:
+      - "Data:Provider=SQL"
+      - "Data.ConnectionString=Server=db;Port=4000;Database=Ecommerce-API-db;User=root;SslMode=None"
+
+
+  db:
+    image: dockersamples/tidb:nanoserver-sac2016
